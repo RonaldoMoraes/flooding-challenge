@@ -4,7 +4,6 @@ namespace App\Tests;
 
 use PHPUnit\Framework\TestCase;
 use App\Matrix;
-// require_once('../lib/Matrix.php');
 
 final class MatrixTest extends TestCase
 {

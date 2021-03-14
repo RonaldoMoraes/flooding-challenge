@@ -1,5 +1,5 @@
 <?php
-include_once __DIR__ . "/utils.php";
+include_once __DIR__ . '/utils.php';
 require_once __DIR__ . '/vendor/autoload.php';
 
 define('DEFAULT_FILE_PATH', __DIR__ . '/testcases.txt');
@@ -52,7 +52,7 @@ foreach($testCases as $testCase) {
     $total = $matrix->getTotalFlooding();
     $floodingSilhouette->printChallenge("Alagamento de Silhueta");
     $answers[] = $total;
-    print_r("TOTAL: $total\n");
+    pr("TOTAL: $total\n");
 }
 
 $timeTotal = (microtime(true) - $timeStart) * 1000;

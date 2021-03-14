@@ -1,7 +1,7 @@
 <?php
 
 // Dump & Die for dev purposes only
-function dd(...$vars)
+function dd(...$vars): void
 {
     foreach ($vars as $var) {
         print_r(json_encode($var));
@@ -10,8 +10,8 @@ function dd(...$vars)
     die;
 }
 
-// Print for terminal AND Web
-function pr($str)
+// Print for Terminal AND Web
+function pr($str): void
 {
     if (isPost()) {
         echo nl2br($str);
