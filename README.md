@@ -9,6 +9,6 @@
 5) [ ] - Dockerize
 6) [ ] - Testes com phpunit
 7) [ ] - Documentação
-8) [ ] - (WEB) Disponibilizar uma página web com form p/ input de arquivo
-9) [ ] - (WEB) Representação Gráfica de cada teste, junto com a resposta geral e tempo de execução
+8) [X] - (WEB) Disponibilizar uma página web com form p/ input de arquivo
+9) [X] - (WEB) Representação Gráfica de cada teste, junto com a resposta geral e tempo de execução (Tá feio demais)
 10) [ ] - Disponibilziar Online em ronaldomoraes.com.br
