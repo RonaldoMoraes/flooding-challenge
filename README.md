@@ -6,7 +6,7 @@
 2) [X] - Encapsular em funções/classes distintas
 3) [X] - Mostrar tempo de execução no terminal
 4) [X] - Representação Gráfica no terminal
-5) [ ] - Dockerize
+5) [X] - Dockerize
 6) [ ] - Testes com phpunit
 7) [ ] - Documentação
 8) [X] - (WEB) Disponibilizar uma página web com form p/ input de arquivo
