@@ -1,7 +1,6 @@
 <?php
-require "lib/FloodingSilhouette.php";
-require "lib/Matrix.php";
 include_once(__DIR__ . "/utils.php");
+require_once __DIR__ . '/vendor/autoload.php';
 
 define('DEFAULT_FILE_PATH', __DIR__ . '/testcases.txt');
 
@@ -34,9 +33,9 @@ foreach($testCases as $testCase) {
         return (int) $i;
     }, explode(' ', $testCase[1]));
 
-    $matrix = new Matrix($width, $heights);
+    $matrix = new \App\Matrix($width, $heights);
     if (!$matrix->isValid()) continue;
-    $floodingSilhouette = new FloodingSilhouette($matrix);
+    $floodingSilhouette = new \App\FloodingSilhouette($matrix);
     $floodingSilhouette->makeItRain();
     $total = $matrix->getTotalFlooding();
     $floodingSilhouette->printChallenge("Alagamento de Silhueta");

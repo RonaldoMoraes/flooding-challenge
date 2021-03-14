@@ -1,4 +1,7 @@
 <?php
+namespace App;
+
+use App\Matrix;
 
 class FloodingSilhouette {
     const AIR = " ";
