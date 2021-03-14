@@ -1,15 +1,24 @@
 <?php
-require "lib/FloodingSilhouette.php";
-require "lib/Matrix.php";
+include_once __DIR__ . "/utils.php";
+require_once __DIR__ . '/vendor/autoload.php';
 
 define('DEFAULT_FILE_PATH', __DIR__ . '/testcases.txt');
 
-$input = file(DEFAULT_FILE_PATH);
-$fileUploaded = $_FILES['file']['tmp_name'];
-if (file_exists($fileUploaded)) {
+// Se é um POST, pega o arquivo enviado
+if (isPost() && isset($_FILES['file'])) {
+    $fileUploaded = $_FILES['file']['tmp_name'];
+    if (!$fileUploaded) {
+        pr("Você deve inserir um arquivo de entrada válido!\n");
+        die;
+    }
     $input = file($fileUploaded);
+// Se não foi um comando com parâmetro, pega o padrão
+} elseif ($argc <= 1 || !file_exists(__DIR__ . "/$argv[1]")) {
+    echo "Running Default TestCases\n";
+    $input = file(DEFAULT_FILE_PATH);
+// Senão pega o arquivo pelo parâmetro ('php execute.php nomedoarquivo.txt')
 } else {
-    pr("Arquivo incorreto, rodando o arquivo padrão de testes:\n");
+    $input = file($argv[1]);
 }
 
 $casesNumber = (int) array_shift($input);
@@ -36,9 +45,9 @@ foreach($testCases as $testCase) {
         return (int) $i;
     }, explode(' ', $testCase[1]));
 
-    $matrix = new Matrix($width, $heights);
+    $matrix = new \App\Matrix($width, $heights);
     if (!$matrix->isValid()) continue;
-    $floodingSilhouette = new FloodingSilhouette($matrix);
+    $floodingSilhouette = new \App\FloodingSilhouette($matrix);
     $floodingSilhouette->makeItRain();
     $total = $matrix->getTotalFlooding();
     $floodingSilhouette->printChallenge("Alagamento de Silhueta");

@@ -13,9 +13,18 @@ function dd(...$vars)
 // Print for terminal AND Web
 function pr($str)
 {
-    if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD']=='POST') {
+    if (isPost()) {
         echo nl2br($str);
         return;
     }
     echo ($str);
+}
+
+// Check REQUEST METHOD (and if it really was a request)
+function isPost(): bool
+{
+    if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD']=='POST') {
+        return true;
+    }
+    return false;
 }
