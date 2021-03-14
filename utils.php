@@ -28,3 +28,14 @@ function isPost(): bool
     }
     return false;
 }
+
+function printSubtitle(): void
+{
+    if (!isPost()) {
+        pr("Legenda: \n Ar: ' ' (Espaço em branco)\nÁgua: ~\nTerreno: X\n\n");
+        return;
+    }
+    pr("Legenda: \n Ar: <div style='width:10px;height:10px;background-color:pink;border: 1px solid black;'></div>\nÁgua: " . 
+        "<div style='width:10px;height:10px;background-color:blue;border: 1px solid black;'></div>\nTerreno: <div style='width:10px;height:10px;background-color:black;border: 1px solid black;'></div>\n\n"
+    );
+}

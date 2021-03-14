@@ -33,7 +33,7 @@ if (count($input) % 2 !== 0) {
 }
 
 $testCases = array_chunk($input, 2);
-pr("Legenda: \n Ar: ' ' (Espaço em branco)\nÁgua: ~\nTerreno: X\n\n");
+printSubtitle();
 $answers = [];
 
 $timeStart = microtime(true);
@@ -47,7 +47,7 @@ foreach($testCases as $testCase) {
 
     $matrix = new \App\Matrix($width, $heights);
     if (!$matrix->isValid()) continue;
-    $floodingSilhouette = new \App\FloodingSilhouette($matrix);
+    $floodingSilhouette = \App\Factory\FloodingSilhouetteFactory::getFlooding($matrix);
     $floodingSilhouette->makeItRain();
     $total = $matrix->getTotalFlooding();
     $floodingSilhouette->printChallenge("Alagamento de Silhueta");
