@@ -14,9 +14,9 @@ if (isPost() && isset($_FILES['file'])) {
     $input = file($fileUploaded);
 // Se não foi um comando com parâmetro, pega o padrão
 } elseif ($argc <= 1 || !file_exists(__DIR__ . "/$argv[1]")) {
-    echo "Running Default TestCases\n";
+    pr("Rodando Testes Padrão\n");
     $input = file(DEFAULT_FILE_PATH);
-// Senão pega o arquivo pelo parâmetro ('php execute.php nomedoarquivo.txt')
+// Senão pega o arquivo pelo parâmetro ('php execute.php testcases.txt')
 } else {
     $input = file($argv[1]);
 }
@@ -33,12 +33,12 @@ if (count($input) % 2 !== 0) {
 }
 
 $testCases = array_chunk($input, 2);
-printSubtitle();
+printHeaderSubtitle();
 $answers = [];
 
 $timeStart = microtime(true);
 // Separando cada test case
-foreach($testCases as $testCase) {
+foreach($testCases as $key => $testCase) {
     $total = 0;
     $width = (int) $testCase[0];
     $heights = array_map(function($i){
@@ -50,7 +50,7 @@ foreach($testCases as $testCase) {
     $floodingSilhouette = \App\Factory\FloodingSilhouetteFactory::getFlooding($matrix);
     $floodingSilhouette->makeItRain();
     $total = $matrix->getTotalFlooding();
-    $floodingSilhouette->printChallenge("Alagamento de Silhueta");
+    $floodingSilhouette->printChallenge("Alagamento de Silhueta " . ($key+1));
     $answers[] = $total;
     pr("TOTAL: $total\n");
 }

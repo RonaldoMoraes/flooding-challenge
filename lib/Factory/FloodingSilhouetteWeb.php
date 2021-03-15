@@ -29,7 +29,7 @@ class FloodingSilhouetteWeb extends FloodingSilhouette implements PrinterInterfa
             $tableRows .= "<tr>$rowData</tr>";
             // pr(json_encode($this->matrix->data[$i]) . "\n");
         }
-        $html = '<table style="min-width:400px;min-height: 150px" class="table">' .
+        $html = '<table style="" class="table table-bordered table-hover table-sm">' .
         '           <tbody>' . 
                         $tableRows .
         '           </tbody>' .

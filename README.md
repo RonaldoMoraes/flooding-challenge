@@ -10,5 +10,4 @@
 6) [X] - Testes com phpunit (Fazer mais)
 7) [ ] - Documentação
 8) [X] - (WEB) Disponibilizar uma página web com form p/ input de arquivo
-9) [X] - (WEB) Representação Gráfica de cada teste, junto com a resposta geral e tempo de execução (Tá feio demais)
-10) [ ] - Disponibilziar Online em ronaldomoraes.com.br
+9) [X] - (WEB) Representação Gráfica de cada teste, junto com a resposta geral e tempo de execução
