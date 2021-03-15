@@ -31,8 +31,8 @@
 
 Resolução do desafio:
 <p align="center">
-    ![WEB](https://github.com/RonaldoMoraes/flooding-challenge/examples/flooding-web.jpg)
-	![TERMINAL](https://github.com/RonaldoMoraes/flooding-challenge/examples/flooding-terminal.jpg)
+    ![WEB](https://github.com/RonaldoMoraes/flooding-challenge/blob/main/examples/flooding-web.jpg?raw=true)
+	![TERMINAL](https://github.com/RonaldoMoraes/flooding-challenge/blob/main/examples/flooding-terminal.jpg?raw=true)
 </p>
 
 Utilizando também de:
